@@ -19,7 +19,7 @@ Many ANSI color libraries are already out there. However, this library tackles a
 
 ## General Usage
 
-The main API entree point are `Hansi.render(input)` , which will generate a colorized string, depending on the input, and `Hansi[input]`, which will give you a color object. You can use Hansi for your purposes by just using one of the two, but they give you different levels of access.
+The main API entry points are `Hansi.render(input)` , which will generate a colorized string, depending on the input, and `Hansi[input]`, which will give you a color object. You can use Hansi for your purposes by just using one of the two, but they give you different levels of access.
 
 The following code:
 
