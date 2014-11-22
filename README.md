@@ -128,7 +128,7 @@ You can get access to a color object via `Hansi[]` or `Hansi::Theme#[]`.
 Hansi[:yellow].red                    # => 255
 Hansi::Theme[:solarized][:yellow].red # => 181
 
-Hansi[:yellow].to_ansi                    # => "\e[38;5;11m"
+Hansi["#ff8300"].to_ansi(mode: 256)       # => "\e[38;5;208m"
 Hansi["#ff8300"].to_web_name              # => :darkorange
 Hansi["#ff8300"].to_web_name(exact: true) # => nil
 ```
