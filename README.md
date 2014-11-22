@@ -101,7 +101,7 @@ The render method takes a `theme` option. This option can have one of the follow
 my_theme = Hansi::Theme.new(foo: :yellow)
 
 puts Hansi.render("<foo>hi</foo>", tags: true, theme: my_theme)               # bright yellow
-puts Hansi.render("<foo>hi</foo>", tags: true, theme: { foo: :yellow})        # bright yellow
+puts Hansi.render("<foo>hi</foo>", tags: true, theme: { foo: :yellow })       # bright yellow
 puts Hansi.render("<foo>hi</foo>", tags: true, theme: [:solarized, my_theme]) # solarized yellow
 puts Hansi.render("<yellow>hi</yellow>", tags: true, theme: :solarized)       # solarized yellow
 ```
