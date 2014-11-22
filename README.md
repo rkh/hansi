@@ -79,7 +79,7 @@ puts Hansi.render("<gold>Hello <underline>%s</underline>!</gold>", ENV['USER'], 
 
 You can also use `render` to turn a color object into its ANIS code.
 
-The `render` method takes a `mode` option to set enforce a color mode.
+The `render` method takes a `mode` option to enforce a color mode.
 
 ``` ruby
 color = Hansi["#f80"]
