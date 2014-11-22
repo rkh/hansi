@@ -148,6 +148,15 @@ Hansi[:yellow].closest(colors) # => Hansi[:orange]
 
 ## Advanced Usage
 
+### Enforcing the default color mode
+
+You can override the color mode Hansi has detected for the current terminal:
+
+``` ruby
+puts "Detected colors: %d" % Hansi.mode
+Hansi.mode = Hansi::TRUE_COLOR
+```
+
 ### Create your own DSL
 
 Rather than defining a DSL, Hansi aims to be easily integrated with whatever tooling you use for building command line applications.
