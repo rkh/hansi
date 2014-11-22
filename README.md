@@ -127,6 +127,10 @@ You can get access to a color object via `Hansi[]` or `Hansi::Theme#[]`.
 ``` ruby
 Hansi[:yellow].red                    # => 255
 Hansi::Theme[:solarized][:yellow].red # => 181
+
+Hansi[:yellow].to_ansi                    # => "\e[38;5;11m"
+Hansi["#ff8300"].to_web_name              # => :darkorange
+Hansi["#ff8300"].to_web_name(exact: true) # => nil
 ```
 
 You can also use a color object to find the closest color in a set of colors:
