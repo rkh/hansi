@@ -40,7 +40,7 @@ describe Hansi::Color do
     specify { color.to_ansi(mode: Hansi::TRUE_COLOR)  .should be == "\e[38;2;255;0;0m" }
 
     specify "unknown mode" do
-      expect { color.to_ansi(mode: 99) }.to raise_error
+      expect { color.to_ansi(mode: 99) }.to raise_error(ArgumentError)
     end
   end
 end
