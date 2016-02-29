@@ -17,6 +17,13 @@ describe Hansi::Theme do
     end
   end
 
+  describe :merge do
+    specify do
+      new_theme = theme.merge(foo: :baz)
+      expect(new_theme.rules).to include(foo: :baz)
+    end
+  end
+
   describe :hash do
     specify { Hansi::Theme[:default].hash.should be == Hansi::Theme[{}].hash }
   end

@@ -41,7 +41,7 @@ module Hansi
 
     def merge(other)
       other_rules = self.class[other].rules
-      self.class.new(**other_rules, **rules)
+      self.class.new(**rules.merge(other_rules))
     end
 
     def to_h
