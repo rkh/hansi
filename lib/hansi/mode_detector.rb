@@ -65,7 +65,7 @@ module Hansi
       else TERMS.keys.detect { |key| TERMS[key].include? term }
       end
     end
-  
+
     def from_xterm
       terminal_command ? 256 : 16
     end
@@ -119,9 +119,10 @@ module Hansi
 
     def iterm_version
       @iterm_version ||= env['TERM_PROGRAM_VERSION']
-      @iterm_version ||= if shell_out? and iterm_path = commands.detect { |c| c["/iTerm.app/Contents/MacOS/iTerm2"] }
-        info_path = Shellwords.escape(File.expand_path('../../Info', iterm_path))
-        `defaults read #{info_path} CFBundleVersion`.chomp if system 'which defaults >/dev/null'
+      @iterm_version ||= if shell_out? and iterm_path = commands.detect { |c| c["Contents/MacOS/iTerm"] }
+        iterm_path = iterm_path[/^(.*) [^ ]+$/, 1] while iterm_path and not File.exist?(iterm_path)
+        info_path  = File.expand_path('../../Info.plist', iterm_path)
+        `defaults read #{Shellwords.escape(info_path)} CFBundleVersion`.chomp if File.exist?(info_path) and system 'which defaults >/dev/null'
       end
     rescue Errno::ENOENT
     end
