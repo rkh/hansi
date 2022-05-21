@@ -35,7 +35,7 @@ module Hansi
       scanner = StringScanner.new(input)
       insert  = true
       stack   = []
-      output  = ""
+      output  = String.new
 
       until scanner.eos?
         if scanner.scan(@simple)
