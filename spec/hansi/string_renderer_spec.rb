@@ -15,7 +15,7 @@ describe Hansi::StringRenderer do
 
   describe :escape do
     context "special character" do
-      subject(:renderer) { Hansi::StringRenderer.new("*" => :bold) }
+      subject(:renderer) { Hansi::StringRenderer.new({"*" => :bold}) }
       it { should escape("foo *bar*").as("foo \\*bar\\*") }
     end
 

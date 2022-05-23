@@ -1,7 +1,7 @@
 describe Hansi do
   describe :mode_for do
-    specify { Hansi.mode_for({})                           .should be == 0   }
-    specify { Hansi.mode_for('TERM' => 'footerm-256color') .should be == 256 }
+    specify { Hansi.mode_for({})                             .should be == 0   }
+    specify { Hansi.mode_for({'TERM' => 'footerm-256color'}) .should be == 256 }
   end
 
   describe :color_names do

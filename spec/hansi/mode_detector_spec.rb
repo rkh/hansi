@@ -14,22 +14,22 @@ describe Hansi::ModeDetector do
   end
 
   example do
-    detector = Hansi::ModeDetector.new('TERM' => 'xterm')
+    detector = Hansi::ModeDetector.new({'TERM' => 'xterm'})
     expect(detector.mode).to be == 16
   end
 
   example do
-    detector = Hansi::ModeDetector.new('TERM' => 'footerm-256color')
+    detector = Hansi::ModeDetector.new({'TERM' => 'footerm-256color'})
     expect(detector.mode).to be == 256
   end
 
   example do
-    detector = Hansi::ModeDetector.new('TERM' => 'footerm+24bit')
+    detector = Hansi::ModeDetector.new({'TERM' => 'footerm+24bit'})
     expect(detector.mode).to be == Hansi::TRUE_COLOR
   end
 
   example do
-    detector = Hansi::ModeDetector.new('TERM' => 'footerm+3byte')
+    detector = Hansi::ModeDetector.new({'TERM' => 'footerm+3byte'})
     expect(detector.mode).to be == Hansi::TRUE_COLOR
   end
 end

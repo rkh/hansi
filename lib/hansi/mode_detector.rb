@@ -28,7 +28,7 @@ module Hansi
     ]
 
     attr_reader :env, :supported, :io
-    def initialize(env , shell_out: nil, io: nil, supported: [0, 8, 16, 88, 256, Hansi::TRUE_COLOR])
+    def initialize(env, shell_out: nil, io: nil, supported: [0, 8, 16, 88, 256, Hansi::TRUE_COLOR])
       shell_out = true    if shell_out.nil? and env == ENV
       io        = $stdout if io.nil?        and env == ENV
       @env, @shell_out, @supported , @io = env, shell_out, supported, io

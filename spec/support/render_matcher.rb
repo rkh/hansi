@@ -1,7 +1,7 @@
-RSpec::Matchers.define :render do |*args|
+RSpec::Matchers.define :render do |*args, **options|
   match do |renderer|
     begin
-      @rendered = renderer.render(*args)
+      @rendered = renderer.render(*args, **options)
     rescue Exception => e
       @exception = e
       false
