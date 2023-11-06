@@ -57,7 +57,7 @@ red = Hansi["#f00"]
 puts Hansi.render(red, "this is red")
 ```
 
-You can render an s-expression stile nested array (good for building your own DSL on top):
+You can render an s-expression style nested array (good for building your own DSL on top):
 
 ``` ruby
 sexp = [:red, "Hello", [:yellow, ENV["USER"]], "- how are you?"]
@@ -77,7 +77,7 @@ puts Hansi.render('foo *bar* _blah\_blah_', "*" => :red, "_" => :green)
 puts Hansi.render("<gold>Hello <underline>%s</underline>!</gold>", ENV['USER'], tags: true)
 ```
 
-You can also use `render` to turn a color object into its ANIS code.
+You can also use `render` to turn a color object into its ANSI code.
 
 The `render` method takes a `mode` option to enforce a color mode.
 
@@ -161,7 +161,7 @@ Hansi.mode = Hansi::TRUE_COLOR
 
 Rather than defining a DSL, Hansi aims to be easily integrated with whatever tooling you use for building command line applications.
 
-Combining for instance the s-expression style rendering with `Hansi.color_names` makes creaking a method name based DSL straight forward:
+Combining for instance the s-expression style rendering with `Hansi.color_names` makes creating a method name based DSL straightforward:
 
 ``` ruby
 module ColorDSL
@@ -180,7 +180,7 @@ puts "Hello #{red("w", green("o", blue("r"), "l"), "d")}!"
 
 ### Generating CSS
 
-Hansi does not turn ANSI escape codes into HTML for you, this would be outside of the scope for this project. However, depending on your use case, you might be able to generate semantic HTML yourself from whichever data structure you use.
+Hansi does not turn ANSI escape codes into HTML for you, this would be outside of the scope of this project. However, depending on your use case, you might be able to generate semantic HTML yourself from whichever data structure you use.
 
 In this case, Hansi can generate CSS rules for you.
 
@@ -209,7 +209,7 @@ puts my_theme.to_css
 }
 ```
 
-You can pass a block for generating the css selector for a given rule name:
+You can pass a block for generating the CSS selector for a given rule name:
 
 ``` ruby
 puts my_theme.to_css { |name| ".hansi .#{name}" }
